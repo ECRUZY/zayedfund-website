@@ -1,0 +1,41 @@
+<section class="section" id="consult">
+  <div class="container consult">
+    <div class="plate plate--night">
+      <span class="tag tag--night">Бесплатно</span>
+      <h2 style="margin-top:18px">Сопровождение бизнес-консультанта</h2>
+      <p class="consult__lead">После отборочного комитета за проектом закрепляется бизнес-консультант и ведёт его до защиты.</p>
+      <ul class="checks">
+        <li><svg><use href="#i-check"/></svg><span>Проверяет цифры и рынок</span></li>
+        <li><svg><use href="#i-check"/></svg><span>Строит финансовую модель</span></li>
+        <li><svg><use href="#i-check"/></svg><span>Выезжает на объект</span></li>
+        <li><svg><use href="#i-check"/></svg><span>Готовит к защите на комитете</span></li>
+      </ul>
+    </div>
+    <form class="plate form" data-consult novalidate>
+      <h3>Запись на консультацию</h3>
+      <p style="color:var(--muted);margin-top:-8px">По вторникам в офисе фонда. Предварительная оценка проекта и расчёт платежа.</p>
+      <div class="field">
+        <label for="c-date">Дата</label>
+        <select class="select" id="c-date" name="date" data-tuesdays required></select>
+      </div>
+      <div class="field">
+        <label for="c-name">Имя</label>
+        <input class="input" id="c-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="c-idea">Название бизнес-идеи</label>
+        <input class="input" id="c-idea" name="idea" maxlength="300" placeholder="Например, пекарня в Грозном" required>
+      </div>
+      <label class="check"><input type="checkbox" name="agree" required><span>Даю согласие на <a href="personal-data.html">обработку персональных данных</a></span></label>
+      <p class="form__status" data-status hidden></p>
+      <button class="btn btn--primary btn--block" type="submit" aria-expanded="false" aria-controls="consult-actions">Записаться</button>
+      <div class="consult-actions" id="consult-actions" hidden>
+        <p>Выберите способ связи для подтверждения даты.</p>
+        <div class="consult-actions__buttons">
+          <a class="btn btn--primary" data-consult-wa target="_blank" rel="noopener">WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary" href="tel:+78712291010"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<div class="calc" data-calc>
+  <form class="calc__form" autocomplete="off" onsubmit="return false">
+    <div class="seg seg--brand" role="group" aria-label="Программа">
+      <!-- program-buttons -->
+    </div>
+    <div class="seg" role="group" aria-label="Что рассчитать">
+      <button type="button" data-mode="pay" aria-pressed="true">Узнать платёж</button>
+      <button type="button" data-mode="term" aria-pressed="false">Узнать срок</button>
+    </div>
+    <div class="field">
+      <label for="calc-amount">Сумма финансирования</label>
+      <div class="input-wrap"><input class="input input--big" id="calc-amount" inputmode="numeric" value="10 000 000" data-money><span class="unit">₽</span></div>
+    </div>
+    <div class="field" data-purpose>
+      <span class="field__label" id="calc-purpose-label">Назначение</span>
+      <div class="seg" role="group" aria-labelledby="calc-purpose-label">
+        <button type="button" data-grace="3" data-term="33" aria-pressed="true">Основные средства</button>
+        <button type="button" data-grace="3" data-term="21" aria-pressed="false">Оборотные средства</button>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" data-term-field>
+        <label for="calc-term">Срок без льготного периода</label>
+        <div class="input-wrap"><input class="input" id="calc-term" inputmode="numeric" value="33"><span class="unit">мес.</span></div>
+      </div>
+      <div class="field" data-pay-field hidden>
+        <label for="calc-budget">Желаемый платёж в месяц</label>
+        <div class="input-wrap"><input class="input" id="calc-budget" inputmode="numeric" value="500 000" data-money><span class="unit">₽</span></div>
+      </div>
+      <div class="field">
+        <label for="calc-grace">Льготный период</label>
+        <div class="input-wrap"><input class="input" id="calc-grace" inputmode="numeric" value="3"><span class="unit">мес.</span></div>
+      </div>
+    </div>
+  </form>
+
+  <div class="calc__result" aria-live="polite">
+    <div>
+      <span class="calc__label" data-out="label">Ежемесячный платёж</span>
+      <div class="calc__big" data-out="big">—</div>
+      <p class="calc__sub" data-out="sub"></p>
+    </div>
+    <div>
+      <div class="bar" aria-hidden="true"><span class="bar__g" data-out="barG"></span><span class="bar__p" data-out="barP"></span></div>
+      <div class="bar-legend"><span><i style="background:var(--red)"></i><span data-out="legG"></span></span><span><i style="background:var(--brand-bright)"></i><span data-out="legP"></span></span></div>
+    </div>
+    <dl class="calc__cards">
+      <div><dt>Наценка</dt><dd data-out="markup">—</dd></div>
+      <div><dt>Итоговый процент наценки</dt><dd data-out="pct">—</dd></div>
+      <div><dt>Общий срок с льготным периодом</dt><dd data-out="total-term">—</dd></div>
+      <div><dt>Общая сумма с наценкой</dt><dd data-out="total">—</dd></div>
+    </dl>
+    <a class="btn btn--light" href="apply.html">Подать заявку</a>
+    <p class="calc__disclaimer"><svg><use href="#i-info"/></svg><span>Расчёт предварительный и не является публичной офертой. Итоговые условия финансирования Фонд определяет после рассмотрения заявки.</span></p>
+  </div>
+</div>

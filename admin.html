@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Редактор сайта · Фонд Зайеда</title>
+<link rel="preload" href="assets/fonts/onest-variable.ttf" as="font" type="font/ttf" crossorigin>
+<script src="assets/js/page-loading.js"></script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script defer src="assets/js/admin.js"></script>
+  <script defer src="assets/js/admin-preview.js"></script>
+</head>
+<body>
+  <header class="mast"><div class="container mast-inner">
+    <a class="brand" href="index.html" target="_blank" rel="noopener" aria-label="Фонд имени Шейха Зайеда, открыть сайт">
+      <img src="assets/img/logo.svg" alt="" width="52" height="31">
+      <span class="brand__name">Фонд имени<br>Шейха Зайеда</span>
+    </a>
+    <span class="mast-title">Редактор сайта</span>
+  </div></header>
+  <main class="container">
+    <p role="status" id="status" aria-live="polite">Открываем редактор…</p>
+    <form class="plate" id="login" hidden><h1>Вход в редактор</h1><label>Код доступа<input class="input" type="password" name="token" required autocomplete="off"></label><button class="btn btn--primary btn--sm">Войти</button></form>
+    <div class="layout" hidden>
+      <nav aria-label="Разделы сайта"><button data-kind="home"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#panels-top-left"></use></svg>Главная</button><button data-kind="projects"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#folders"></use></svg>Проекты</button><button data-kind="programs"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#layers"></use></svg>Программы</button></nav>
+      <section id="collection" aria-labelledby="list-title">
+        <div class="list-head"><h1 id="list-title"></h1><button type="button" class="btn btn--primary btn--sm" id="add"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#plus"></use></svg><span></span></button></div>
+        <div id="search-row"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#search"></use></svg><input class="input" id="search" type="search" aria-label="Поиск записей" placeholder="Найти проект"></div>
+        <div id="records"></div>
+      </section>
+      <section id="workspace" hidden>
+        <div class="toolbar"><button id="back" type="button"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#arrow-left"></use></svg><span></span></button><div class="actions"><span id="state" aria-live="polite"></span><button class="btn btn--secondary btn--sm" id="preview" type="button"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#eye"></use></svg>Предпросмотр</button><button class="btn btn--primary btn--sm" id="save" type="submit" form="editor"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#save"></use></svg>Сохранить</button></div></div>
+        <form class="plate" id="editor"><h1 id="form-title" tabindex="-1"></h1><div id="fields"></div></form>
+      </section>
+    </div>
+  </main>
+  <dialog id="proof" aria-labelledby="proof-title"><div class="proof-head"><h2 id="proof-title">Предпросмотр</h2><button class="btn btn--secondary btn--sm" id="close-proof" autofocus><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/admin/icons.svg#arrow-left"></use></svg>К редактированию</button></div><p id="proof-message" role="status"></p><iframe title="Вид материала на сайте" sandbox="allow-same-origin"></iframe></dialog>
+</body>
+</html>

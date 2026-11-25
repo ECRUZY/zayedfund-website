@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+_src/backups/
+_src/.publish.lock
+.env
+.env.*
+!.env.example
